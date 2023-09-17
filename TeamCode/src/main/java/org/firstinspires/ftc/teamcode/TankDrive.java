@@ -210,8 +210,8 @@ public final class TankDrive {
             module.setBulkCachingMode(LynxModule.BulkCachingMode.AUTO);
         }
 
-        leftMotors = Arrays.asList(hardwareMap.get(DcMotorEx.class, "left"));
-        rightMotors = Arrays.asList(hardwareMap.get(DcMotorEx.class, "right"));
+        leftMotors = Arrays.asList(hardwareMap.get(DcMotorEx.class, "leftDrive"));
+        rightMotors = Arrays.asList(hardwareMap.get(DcMotorEx.class, "rightDrive"));
 
         for (DcMotorEx m : leftMotors) {
             m.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);

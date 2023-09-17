@@ -3,8 +3,9 @@ package org.firstinspires.ftc.teamcode.subsystems
 import com.arcrobotics.ftclib.command.RunCommand
 import com.arcrobotics.ftclib.command.SubsystemBase
 import com.qualcomm.robotcore.hardware.DcMotorEx
-import org.firstinspires.ftc.teamcode.Constants.joystickTransformFactor
+import org.firstinspires.ftc.teamcode.util.Constants.joystickTransformFactor
 import kotlin.math.abs
+import kotlin.math.max
 import kotlin.math.pow
 import kotlin.math.sign
 
@@ -36,4 +37,11 @@ class TankDriveSys (leftMotor: DcMotorEx, rightMotor: DcMotorEx) : SubsystemBase
         (1.0 / (joystickTransformFactor - 1)
             * sign(input)
             * (joystickTransformFactor.pow(abs(input)) - 1))
+
+    override fun periodic() {
+        super.periodic()
+
+        leftMotor.power = leftMotor.power/max(leftMotor.power, 1.0)
+        rightMotor.power = rightMotor.power/max(rightMotor.power, 1.0)
+    }
 }

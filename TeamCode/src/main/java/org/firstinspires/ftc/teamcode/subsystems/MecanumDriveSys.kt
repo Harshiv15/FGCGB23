@@ -5,8 +5,7 @@ import com.arcrobotics.ftclib.command.RunCommand
 import com.arcrobotics.ftclib.command.SubsystemBase
 import com.arcrobotics.ftclib.drivebase.MecanumDrive
 import com.arcrobotics.ftclib.hardware.motors.MotorEx
-import com.qualcomm.robotcore.hardware.DcMotorEx
-import org.firstinspires.ftc.teamcode.Constants.slowFactor
+import org.firstinspires.ftc.teamcode.util.Constants.slowFactor
 import java.util.function.DoubleSupplier
 
 class MecanumDriveSys(fL: MotorEx, fR: MotorEx, bL: MotorEx, bR: MotorEx) : SubsystemBase() {
